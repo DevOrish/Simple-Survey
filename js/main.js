@@ -7,7 +7,7 @@ var gQuests = [
     {
         txt: 'אאא',
         answer: null,
-        duration: null, //miliseconds,
+        duration: null,
         confidence: null
     },
     {
@@ -30,7 +30,7 @@ var gQuests = [
     },
 ];
 
-function init(){
+function init() {
     renderQuestion(gQuests[gCurrQuestIdx]);
 }
 
@@ -54,8 +54,8 @@ function nextQuest() {
         return;
     }
     if (gCurrQuestIdx === gQuests.length - 1) {
-        showNextPage()
-        return
+        showNextPage();
+        return;
     }
     var elSelectedConfidence = document.querySelector('[name="answer"]:checked');
     currQuest.confidence = elSelectedConfidence.value;
@@ -72,7 +72,12 @@ function renderQuestion(quest) {
     var elAnswerInput = document.querySelector('.answer-input');
     elAnswerInput.value = 50;
     var elSelectedConfidence = document.querySelector('[name="answer"]:checked');
-    if(elSelectedConfidence) elSelectedConfidence.checked = false;
+    if (elSelectedConfidence) elSelectedConfidence.checked = false;
+
+    // check if error msg is shown, if it is - hide it!
+    var elError = document.querySelector('.error-msg');
+    if (!elError.classList.contains('hide')) elError.classList.add('hide');
+
 }
 
 function showErrorMsg() {
@@ -80,6 +85,6 @@ function showErrorMsg() {
     elError.classList.remove('hide');
 }
 
-function showNextPage(){
+function showNextPage() {
     console.log('DONE');
 }
