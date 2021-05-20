@@ -1,0 +1,19 @@
+.radio-list{
+    list-style: none;
+    display: flex;
+}
+
+.radio-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.error-msg{
+    color: red;
+}

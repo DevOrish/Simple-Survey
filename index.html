@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+
+<body onload="init()">
+    <p class="scenario">
+        תרחיש
+    </p>
+    <p class="answer">50%</p>
+    <p class="error-msg hide">נא להקיש אישור על מנת לאשר את בחירתך</p>
+
+    0%<input oninput="updateAnswer(this)" class="answer-input" type="range" min="0" max="100" step="10">100%
+    <br>
+    <button onclick="saveAnswer()">אישור</button>
+
+    <p>מהי רמת הביטחון</p>
+    <div>
+        <ul class="radio-list">
+            <li>
+                <input id="1" type="radio" name="answer" value="1">
+                <label for="1">1</label>
+            </li>
+            <li>
+                <input id="2" type="radio" name="answer" value="2">
+                <label for="2">2</label>
+            </li>
+            <li>
+                <input id="3" type="radio" name="answer" value="3">
+                <label for="3">3</label>
+            </li>
+            <li>
+                <input id="4" type="radio" name="answer" value="4">
+                <label for="4">4</label>
+            </li>
+            <li>
+                <input id="5" type="radio" name="answer" value="5">
+                <label for="5">5</label>
+            </li>
+            <li>
+                <input id="6" type="radio" name="answer" value="6">
+                <label for="6">6</label>
+            </li>
+            <li>
+                <input id="7" type="radio" name="answer" value="7">
+                <label for="7">7</label>
+            </li>
+        </ul>
+    </div>
+
+    <br>
+    <button onclick="nextQuest()">Next</button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
